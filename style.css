@@ -50,6 +50,30 @@ main {
   box-shadow: 2px 0 10px rgba(0, 0, 0, 0.5);
 }
 
+@keyframes flutuar {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+.icone-tec {
+ width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 12px rgba(124, 58, 237, 0.6); /* Roxo brilhante */
+}
+
+.icones-tecnologias {
+  margin-top: 15rem;
+}
+
+.icone-tec:hover {
+  transform: scale(1.1);
+  box-shadow:
+    0 0 8px rgba(124, 58, 237, 0.8),
+    0 0 16px rgba(124, 58, 237, 0.5);
+}
+
 .perfil h1 {
   margin: 10px 0 5px;
   font-size: 2rem;
@@ -81,28 +105,44 @@ main {
   display: inline-block;
   padding: 10px 20px;
   margin: 10px;
-  background-color: #7c3aed;
-  color: white;
-  text-decoration: none;
   border-radius: 20px;
   font-weight: bold;
-  transition: background 0.3s;
+  text-decoration: none;
+  color: white;
+  transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
 }
 
+/* Efeito geral no hover */
 .botao:hover {
-  background-color: #a855f7;
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2);
 }
 
+/* WhatsApp */
 .botao.whatsapp {
   background-color: #25d366;
 }
 
+.botao.whatsapp:hover {
+  background-color: #1ebe5d;
+}
+
+/* LinkedIn */
 .botao.linkedin {
   background-color: #0077b5;
 }
 
+.botao.linkedin:hover {
+  background-color: #005e94;
+}
+
+/* GitHub */
 .botao.github {
   background-color: #333;
+}
+
+.botao.github:hover {
+  background-color: #555;
 }
 
 
