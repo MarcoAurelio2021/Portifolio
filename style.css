@@ -155,20 +155,66 @@ footer {
 }
 
 @media (max-width: 768px) {
+  body {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
   .container {
     flex-direction: column;
     width: 95%;
+    margin: 20px;
+    border-radius: 0;
   }
 
   .perfil, .conteudo {
     width: 100%;
+    padding: 20px;
   }
 
-   .perfil {
+  .perfil {
     padding: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   }
 
   .conteudo {
     padding: 20px;
+  }
+
+  .foto-redonda {
+    width: 120px;
+    height: 120px;
+    margin-bottom: 10px;
+  }
+
+  .perfil h1 {
+    font-size: 1.5rem;
+  }
+
+  .perfil p {
+    font-size: 1rem;
+  }
+
+  .icone-tec {
+    width: 36px;
+    height: 36px;
+  }
+
+  .icones-tecnologias {
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .botao {
+    padding: 10px 16px;
+    font-size: 0.95rem;
+    margin: 8px 5px;
+    display: inline-block;
+  }
+
+  section {
+    margin-bottom: 20px;
   }
 }
