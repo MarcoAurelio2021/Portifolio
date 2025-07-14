@@ -1,5 +1,5 @@
 body {
-   margin: 0;
+  margin: 0;
   padding: 0;
   font-family: Arial, sans-serif;
   background: linear-gradient(135deg, #000000, #1a0033, #7c3aed);
@@ -8,18 +8,17 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
+  flex-direction: column; /* melhora responsividade */
 }
 
 main {
-  max-width: 1200px;   /* Limita o tamanho máximo do main */
-  margin: 0 auto;      /* Centraliza horizontalmente */
-  padding: 40px 20px;  /* Espaçamento interno */
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
   box-sizing: border-box;
-
-  background-color: rgba(255, 255, 255, 0.05); /* Fundo muito leve */
+  background-color: rgba(255, 255, 255, 0.05);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
   border-radius: 12px;
-
   font-size: 1.1rem;
   line-height: 1.6;
   color: #eee;
@@ -28,50 +27,23 @@ main {
 .container {
   display: flex;
   width: 80%;
-  
   max-width: 1200px;
   box-shadow: 0 0 20px rgba(124, 58, 237, 0.6);
   border-radius: 15px;
   background-color: rgba(0, 0, 0, 0.6);
   overflow: hidden;
+  flex-wrap: wrap;
 }
 
 .perfil {
   width: 30%;
   background-color: rgba(0, 0, 0, 0.4);
   padding: 40px 20px;
-  
-  /* Centraliza o conteúdo verticalmente e horizontalmente */
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-
   box-shadow: 2px 0 10px rgba(0, 0, 0, 0.5);
-}
-
-@keyframes flutuar {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-5px); }
-}
-
-.icone-tec {
- width: 40px;
-  height: 40px;
-  border-radius: 8px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 4px 12px rgba(124, 58, 237, 0.6); /* Roxo brilhante */
-}
-
-.icones-tecnologias {
-  margin-top: 15rem;
-}
-
-.icone-tec:hover {
-  transform: scale(1.1);
-  box-shadow:
-    0 0 8px rgba(124, 58, 237, 0.8),
-    0 0 16px rgba(124, 58, 237, 0.5);
 }
 
 .perfil h1 {
@@ -85,9 +57,25 @@ main {
   color: #ddd;
 }
 
-.conteudo {
-  width: 70%;
-  padding: 40px;
+.perfil-extra {
+  margin-top: 20px;
+  width: 100%;
+}
+
+#experiencia {
+  margin-top: 30px;
+  text-align: center;
+}
+
+#experiencia h2 {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+#experiencia .botao {
+  font-size: 0.95rem;
+  padding: 8px 16px;
 }
 
 .foto-redonda {
@@ -98,7 +86,44 @@ main {
   object-position: center top;
   margin-bottom: 15px;
   border: 4px solid #7c3aed;
-  /* Centraliza a imagem - com flexbox no pai não é necessário */
+}
+
+.icones-tecnologias {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+@keyframes flutuar {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+.icone-tec {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  animation: flutuar 2.5s infinite ease-in-out;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 12px rgba(124, 58, 237, 0.6);
+}
+
+.icone-tec:hover {
+  transform: scale(1.1) translateY(-3px);
+  box-shadow:
+    0 0 8px rgba(124, 58, 237, 0.8),
+    0 0 16px rgba(124, 58, 237, 0.5);
+}
+
+.conteudo {
+  width: 70%;
+  padding: 40px;
 }
 
 .botao {
@@ -112,40 +137,32 @@ main {
   transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
 }
 
-/* Efeito geral no hover */
 .botao:hover {
   transform: scale(1.05);
   box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2);
 }
 
-/* WhatsApp */
+/* Botões individuais */
 .botao.whatsapp {
   background-color: #25d366;
 }
-
 .botao.whatsapp:hover {
   background-color: #1ebe5d;
 }
 
-/* LinkedIn */
 .botao.linkedin {
   background-color: #0077b5;
 }
-
 .botao.linkedin:hover {
   background-color: #005e94;
 }
 
-/* GitHub */
 .botao.github {
   background-color: #333;
 }
-
 .botao.github:hover {
   background-color: #555;
 }
-
-
 
 footer {
   text-align: center;
@@ -154,12 +171,8 @@ footer {
   color: #aaa;
 }
 
+/* Responsividade */
 @media (max-width: 768px) {
-  body {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
   .container {
     flex-direction: column;
     width: 95%;
@@ -169,15 +182,6 @@ footer {
 
   .perfil, .conteudo {
     width: 100%;
-    padding: 20px;
-  }
-
-  .perfil {
-    padding: 20px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  }
-
-  .conteudo {
     padding: 20px;
   }
 
@@ -202,8 +206,6 @@ footer {
 
   .icones-tecnologias {
     margin-top: 1.5rem;
-    display: flex;
-    justify-content: center;
     gap: 10px;
   }
 
@@ -211,10 +213,17 @@ footer {
     padding: 10px 16px;
     font-size: 0.95rem;
     margin: 8px 5px;
-    display: inline-block;
   }
 
   section {
     margin-bottom: 20px;
+  }
+
+  #experiencia h2 {
+    font-size: 1rem;
+  }
+
+  #experiencia .botao {
+    padding: 8px 12px;
   }
 }
