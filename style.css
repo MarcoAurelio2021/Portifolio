@@ -11,6 +11,7 @@ body {
   flex-direction: column; /* melhora responsividade */
 }
 
+
 main {
   max-width: 1200px;
   margin: 0 auto;
@@ -167,10 +168,11 @@ main {
 }
 
 footer {
-  text-align: center;
-  padding: 20px;
-  background: #000000;
-  color: #aaa;
+   text-align: center;
+  padding: 10px 0;
+  color: #888;
+  font-size: 0.85rem;
+  background: none; /* Remove a caixa preta */
 }
 
 /* Responsividade */
